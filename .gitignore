@@ -3,3 +3,5 @@
 ################################################################################
 
 /CursoWebApiRest/.vs/CursoWebApiRest/v15/Server/sqlite3/db.lock
+/CursoWebApiRest/MinhaApi.Api/bin
+/CursoWebApiRest/MinhaApi.Api/obj/Debug
