@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaApi.Comum.Repositorios
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaApi.Repositorios.Entity", "MinhaApi.Repositorios.Entity\MinhaApi.Repositorios.Entity.csproj", "{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositorio", "Repositorio", "{342490A0-F55A-4901-B712-774D70D9CBB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,7 @@ Global
 		{99D668D1-C428-4098-979B-01F44F77DEB2} = {759FDA97-55D9-4557-9B62-17AAE01D6115}
 		{C0EBBA66-D21E-448B-B5CD-1EF14800091E} = {B327CAA5-6D02-4C47-98F1-66ED63FECBC3}
 		{24E73822-60C6-4FF1-9825-1512781EED9A} = {B327CAA5-6D02-4C47-98F1-66ED63FECBC3}
+		{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA} = {342490A0-F55A-4901-B712-774D70D9CBB0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C368AD23-C73C-4533-A7E1-1605C0CBA61B}
