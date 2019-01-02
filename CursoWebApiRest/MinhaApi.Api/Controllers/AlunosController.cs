@@ -14,12 +14,10 @@ namespace MinhaApi.Api.Controllers
     public class AlunosController : ApiController
     {
         private IRepositorioMinhaApi<Aluno, int> _repositorioAlunos = new RepositorioAlunos(new MinhaApiDbContext());
-
         public IEnumerable<Aluno> Get()
         {
             return _repositorioAlunos.Selecionar();
         }
-
         public HttpResponseMessage Get(int? id)
         {
             if (!id.HasValue)
@@ -32,6 +30,19 @@ namespace MinhaApi.Api.Controllers
                 return Request.CreateResponse(HttpStatusCode.NotFound);
             }
             return Request.CreateResponse(HttpStatusCode.Found, aluno);
+        }
+        public HttpResponseMessage Post([FromBody]Aluno aluno)
+        {
+            try
+            {
+                _repositorioAlunos.Inserir(aluno);
+                return Request.CreateResponse(HttpStatusCode.Created);
+            }
+            catch (Exception ex)
+            {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+
         }
     }
 }
