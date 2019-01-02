@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaApi.Comum.Repositorios
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaApi.Comum.Repositorios.Entity", "MinhaApi.Comum.Repositorios.Entity\MinhaApi.Comum.Repositorios.Entity.csproj", "{24E73822-60C6-4FF1-9825-1512781EED9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MinhaApi.Repositorios.Entity", "MinhaApi.Repositorios.Entity\MinhaApi.Repositorios.Entity.csproj", "{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{24E73822-60C6-4FF1-9825-1512781EED9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E73822-60C6-4FF1-9825-1512781EED9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E73822-60C6-4FF1-9825-1512781EED9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C9CF833-5ECF-4FE5-BF78-B6D24D8002AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
