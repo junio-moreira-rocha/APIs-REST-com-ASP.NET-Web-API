@@ -14,35 +14,74 @@ namespace MinhaApi.Api.Controllers
     public class AlunosController : ApiController
     {
         private IRepositorioMinhaApi<Aluno, int> _repositorioAlunos = new RepositorioAlunos(new MinhaApiDbContext());
-        public IEnumerable<Aluno> Get()
+        public IHttpActionResult Get()
         {
-            return _repositorioAlunos.Selecionar();
+            return Ok(_repositorioAlunos.Selecionar());
         }
-        public HttpResponseMessage Get(int? id)
+        public IHttpActionResult Get(int? id)
         {
             if (!id.HasValue)
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest);
+                return BadRequest();
             }
             Aluno aluno = _repositorioAlunos.SelecionarPorId(id.Value);
             if (aluno == null)
             {
-                return Request.CreateResponse(HttpStatusCode.NotFound);
+                return NotFound();
             }
-            return Request.CreateResponse(HttpStatusCode.Found, aluno);
+            return Content(HttpStatusCode.Found, aluno);
         }
-        public HttpResponseMessage Post([FromBody]Aluno aluno)
+        public IHttpActionResult Post([FromBody]Aluno aluno)
         {
             try
             {
                 _repositorioAlunos.Inserir(aluno);
-                return Request.CreateResponse(HttpStatusCode.Created);
+                return Created($"{Request.RequestUri}/{aluno.Id}", aluno);
             }
             catch (Exception ex)
             {
-                return Request.CreateResponse(HttpStatusCode.InternalServerError, ex.Message);
+                return InternalServerError(ex);
             }
+        }
+        public IHttpActionResult Put(int? id, [FromBody]Aluno aluno)
+        {
+            try
+            {
+                if (!id.HasValue)
+                {
+                    return BadRequest();
+                }
+                aluno.Id = id.Value;
+                _repositorioAlunos.Atualizar(aluno);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
 
+                return InternalServerError(ex);
+            }
+        }
+        public IHttpActionResult Delete(int? id)
+        {
+            try
+            {
+                if (!id.HasValue)
+                {
+                    return BadRequest();
+                }
+                Aluno aluno = _repositorioAlunos.SelecionarPorId(id.Value);
+                if (aluno == null)
+                {
+                    return NotFound();
+                }
+                _repositorioAlunos.ExcluirPorId(id.Value);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return InternalServerError();
+            }
         }
     }
 }
